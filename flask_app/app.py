@@ -5,9 +5,17 @@ from random import sample
 server = Flask(__name__)
 
 
-@server.route('/')
-def hello_world():
-    return 'hello world!'
+@server.route('/test', methods=['GET'])
+def print_hi():
+    # Use a breakpoint in the code line below to debug your script.
+
+    request_data = request.get_json(force=True)
+
+    return request_data
+
+# @server.route('/')
+# def hello_world():
+#     return 'hello world!'
 
 # def run_request():
 #     index = int(request.json['index'])
